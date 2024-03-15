@@ -82,7 +82,7 @@ export const Home = () => {
         title="Sandvik Asset Management"
         description="This is the final project during an internship at Sandvik, this project is useful for managing assets at the company."
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="/projects/sandvik-asset-management"
         model={{
           type: 'laptop',
           alt: 'Sandvik Asset Management',
