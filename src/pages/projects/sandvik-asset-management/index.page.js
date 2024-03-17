@@ -1,1 +1,1 @@
-export { SmartSparrow as default } from './SmartSparrow';
+export { SandvikAsset as default } from './SandvikAsset';
