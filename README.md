@@ -7,26 +7,6 @@
 
 My design portfolio to showcase a few projects. Built with [Next.Js](https://nextjs.org/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/). View the [live site](https://ahmad-ruslandia.github.io) .
 
-## Install & run
-
-Make sure you have nodejs `18.0.0` or higher and npm `8.6.0` or higher installed. Install dependencies with:
-
-```bash
-npm install
-```
-
-Once it's done start up a local server with:
-
-```bash
-npm run dev
-```
-
-To view the components storybook:
-
-```bash
-npm run dev:storybook
-```
-
 ## Deployment
 
 I've set up the site using Cloudflare for hosting. Deploy the site to Cloudflare Pages:
