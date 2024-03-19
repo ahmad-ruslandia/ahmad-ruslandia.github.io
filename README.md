@@ -3,9 +3,9 @@
 </p>
 <h1 align="center">Personal portfolio</h1>
 
-[![Site preview](/public/site-preview.png)](https://happy-dune-0b9442500.5.azurestaticapps.net/)
+[![Site preview](/public/site-preview.png)](https://azure.ahmadruslandia.com)
 
-My design portfolio to showcase a few projects. Built with [Next.Js](https://nextjs.org/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/). View the [live site](https://happy-dune-0b9442500.5.azurestaticapps.net/) .
+My design portfolio to showcase a few projects. Built with [Next.Js](https://nextjs.org/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/). View the [live site](https://azure.ahmadruslandia.com) .
 
 ## Deployment
 
