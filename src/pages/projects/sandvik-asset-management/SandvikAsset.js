@@ -36,7 +36,7 @@ import styles from './SandvikAsset.module.css';
 
 const title = 'Sandvik Asset Management';
 const description =
-  'The project was created in 2023, a goal in its design to facilitate supporting the company property-property assets easily via infterface and user security.';
+  'The project was created in 2023, a goal in its design to facilitate supporting the company property assets easily via infterface and user security.';
 const roles = ['Codeigniter', 'Bootstrap', 'My SQL'];
 
 export const SandvikAsset = () => {
