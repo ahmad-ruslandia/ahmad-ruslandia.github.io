@@ -1,0 +1,53 @@
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      # https://pptr.dev/troubleshooting#running-puppeteer-in-docker
+      #- name: Install Deps for Puppeteer
+      # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
+      # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer
+      # installs, work.
+      #  run: sudo apt-get update && sudo apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends && npm i chromium chromedriver selenium-webdriver -g && npm i puppeteer -g
+      - name: Update caniuse-lite
+        run: npx browserslist@latest --update-db && npx update-browserslist-db@latest
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_MOSS_0875ECB0F }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: 'upload'
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: '/' # App source code path
+          api_location: '' # Api source code path - optional
+          output_location: 'build' # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id:
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_MOSS_0875ECB0F }}
+          action: 'close'
