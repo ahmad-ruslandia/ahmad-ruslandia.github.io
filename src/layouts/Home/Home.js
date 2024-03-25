@@ -102,7 +102,7 @@ export const Home = () => {
         index={2}
         title="Upload Single Image to Rest API"
         description="This example will cover you need to know about Flutter image upload to REST API. This complete example will cover single image upload with data. For this example I used Express-js-REST-API."
-        buttonText="View website"
+        buttonText="Visit project"
         buttonLink="https://github.com/ahmad-ruslandia/Upload-Single-Picture-to-Rest-API"
         model={{
           type: 'phone',
